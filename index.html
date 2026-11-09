@@ -1,12 +1,78 @@
-<!doctype html>
-<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FieldSketch 风景速写本 · CXY Studio</title>
-<style>html{background:#faf7ef;color:#262e28;font:17px/1.75 system-ui,sans-serif}body{max-width:43rem;margin:auto;padding:2rem 1.3rem 4rem}h1,h2{font-family:serif;line-height:1.3}a{color:#245841}section{padding-top:.8rem}footer{margin-top:3rem}</style>
-<header><h1>FieldSketch 风景速写本</h1><nav><a href="#privacy">隐私政策</a> · <a href="#support">技术支持</a></nav></header>
-<main><section id="privacy"><h2>隐私政策</h2><p>CXY Studio 提供 FieldSketch。你无需注册账号。速写、原图、笔迹、工程和练习记录保存在你的设备。我们不通过 App 收集个人数据，不使用广告、第三方分析或跨应用跟踪。</p>
-<p>拍照取景时会请求相机权限。从相册导入时，App 只读取你选中的照片。地点记录默认关闭，可在设置中开启。地点可逐页清除。地图和地点名称使用 Apple 系统服务，其网络请求由 Apple 处理。</p>
-<p>试用、购买和恢复由 Apple 处理。App 在设备上验证购买权益，CXY Studio 不接收付款资料。只有在你选择分享或导出后，指定的应用或接收者才会获得所选文件。</p>
-<p>你可以删除作品、撤销系统权限或移除 App。移除前请导出要保留的可编辑工程。此前导出或发送的副本由你或接收者管理。</p></section>
-<section id="support"><h2>技术支持</h2>
-<p>恢复买断请打开 FieldSketch 的「设置 → 试用与永久解锁 → 恢复购买」，使用购买时的 Apple 账户。试用期满后仍可查看和导出已有作品。</p>
-<p>如需使用帮助或咨询隐私问题，可通过 <a href="https://github.com/chenkaitech/FieldSketch/issues/new">FieldSketch 支持页面联系 CXY Studio</a>。请注明设备、系统版本和遇到问题的步骤。GitHub 上的反馈公开可见，请勿附上私人作品、密码或付款凭据。</p></section></main>
-<footer>© 2026 CXY Studio · 更新于 2026 年 11 月 10 日</footer></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="title-el" data-en="FieldSketch · Landscape Sketchbook" data-zh="FieldSketch · 风景速写本">FieldSketch · Landscape Sketchbook</title>
+<meta id="meta-desc" name="description" content="Sketch landscapes on iPhone and iPad. Start with a free lakeside drawing lesson, turn a photo into a reference and keep your drawings in a local sketchbook." data-en="Sketch landscapes on iPhone and iPad. Start with a free lakeside drawing lesson, turn a photo into a reference and keep your drawings in a local sketchbook." data-zh="在 iPhone 和 iPad 上画风景。从免费的湖边小镇课开始，把照片变成绘画参考，将手绘作品装订成册。">
+<link rel="icon" type="image/webp" href="assets/icon.webp">
+<style>
+:root{
+  --bg:#0E1821; --surface:#162331; --text:#EDF4FC; --text2:#A5B3C4; --blue:#7DBBFF;
+  --joy:#FFD54F; --calm:#8FA8FF; --anx:#FF8F7A; --sad:#8E79D6; --ener:#3ECF73;
+}
+*{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);
+font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, Noto Sans, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;}
+a{color:var(--blue);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:40px 24px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700}
+.brand img.icon{width:40px;height:40px;border-radius:12px}
+.lang-switch{display:flex;gap:8px;background:var(--surface);border-radius:12px;padding:6px}
+.lang-switch button{all:unset;cursor:pointer;padding:6px 14px;border-radius:10px;color:var(--text2);font-weight:600}
+.lang-switch button.active{background:var(--blue);color:#0B1220}
+.hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:36px;align-items:center;margin-top:40px}
+.hero h1{font-size:40px;line-height:1.1;margin:0 0 16px}
+.hero p.lead{color:var(--text2);font-size:18px;margin:0 0 24px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.button{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#0B1220;font-weight:700;
+  padding:14px 22px;border-radius:14px;box-shadow:0 10px 30px rgba(125,166,255,.25);}
+.button.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+.card{background:var(--surface);border-radius:20px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25);}
+.section{margin-top:80px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.tag{display:inline-block;padding:6px 10px;border-radius:8px;font-size:13px}
+.sample{width:100%;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.35);background:#0f1118;height:auto;object-fit:contain}
+.footer{margin-top:80px;color:var(--text2);font-size:14px;border-top:1px solid rgba(255,255,255,.08);padding:32px 0}
+.colorbar{height:10px;border-radius:999px;background:linear-gradient(90deg,var(--calm),var(--ener),var(--joy),var(--anx),var(--sad));}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.gallery img{width:100%;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.35);background:#0f1118;height:auto;object-fit:contain}
+@media (max-width:960px){ .hero{grid-template-columns:1fr} }
+
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{color:var(--text2);font-weight:600}
+.nav-links a:hover{color:var(--text)}
+.small{color:var(--text2);font-size:14px;line-height:1.7}
+ul.bullets{margin:12px 0 0 18px; color: var(--text2); line-height:1.7}
+nav{flex-wrap:wrap}p{line-height:1.7}.hero .sample{max-width:390px;display:block;margin:auto}.gallery figure{margin:0}.gallery figcaption{margin-top:12px;line-height:1.6;color:var(--text2)}button:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}html{scroll-behavior:smooth}@media(max-width:640px){.grid-2{grid-template-columns:1fr}.hero h1{font-size:34px}.footer .grid-2>div{text-align:left!important}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.hero .cover{display:block;width:min(100%,360px);height:auto;margin:auto}
+h1,h2,h3{overflow-wrap:break-word}h2{margin-top:0}.card h3{margin:0 0 8px}.grid-3,.gallery{margin-top:20px}.card p:last-child{margin-bottom:0}.footer p{margin:0}
+@media(max-width:640px){.container{padding:24px 18px}.section{margin-top:52px}.hero .cover{max-height:320px;width:auto;max-width:100%}.nav-links{order:3;flex-basis:100%}.lang-switch button{padding:6px 10px}}
+</style></head><body><div class="container">
+<nav><div class="brand"><img class="icon" src="assets/icon.webp" alt="" width="40" height="40"><span>FieldSketch</span></div><div class="nav-links"><a href="#features" data-en="Features" data-zh="功能">Features</a><a href="#privacy" data-en="Privacy" data-zh="隐私政策">Privacy</a><a href="#support" data-en="Support" data-zh="技术支持">Support</a></div><div class="lang-switch" role="group" aria-label="English / 中文"><button id="btn-en" type="button" class="active" aria-pressed="true" lang="en">English</button><button id="btn-zh" type="button" aria-pressed="false" lang="zh-CN">中文</button></div></nav>
+<main><section class="hero"><div><h1 data-en="A sketchbook for the view in front of you" data-zh="把眼前的风景画进速写本">A sketchbook for the view in front of you</h1><p class="lead" data-en="Start with the shoreline of a lakeside town, or use a photo from your own walk. Draw on iPhone or iPad, then bind the finished page into your sketchbook." data-zh="从湖边小镇的一条岸线开始，也可以选一张散步时拍的照片。在 iPhone 或 iPad 上落笔，再把画好的这一页装订成册。">Start with the shoreline of a lakeside town, or use a photo from your own walk. Draw on iPhone or iPad, then bind the finished page into your sketchbook.</p><div class="cta"><a href="#getting-started" class="button" data-en="Try the lakeside lesson" data-zh="了解免费第一课">Try the lakeside lesson</a><a href="#gallery" class="button ghost" data-en="See the sketchbook" data-zh="看看绘画界面">See the sketchbook</a></div></div><img class="cover" src="assets/cover.webp" width="800" height="1000" alt="" fetchpriority="high"></section>
+<section class="section" id="features"><h2 data-en="Drawing with a reference" data-zh="跟着参考画风景">Drawing with a reference</h2><div class="grid-3"><article class="card"><h3 data-en="Find the main lines" data-zh="提炼线稿">Find the main lines</h3><p class="small" data-en="Switch between the photo, grayscale and outlines. Adjust line density to keep the shapes you want to draw." data-zh="在原图、灰度和轮廓之间切换。调节线条密度，留下你想画的形状。">Switch between the photo, grayscale and outlines. Adjust line density to keep the shapes you want to draw.</p></article><article class="card"><h3 data-en="Choose how much help to use" data-zh="选择画法">Choose how much help to use</h3><p class="small" data-en="Trace a faint outline, keep the reference beside the paper or start with a blank page. Draw with a finger or Apple Pencil on a compatible iPad." data-zh="可以沿着淡淡的底稿描画，把参考放在纸旁对照，也可以从空白页起笔。用手指就能画，在兼容的 iPad 上还可使用 Apple Pencil。">Trace a faint outline, keep the reference beside the paper or start with a blank page. Draw with a finger or Apple Pencil on a compatible iPad.</p></article><article class="card"><h3 data-en="Redraw the same scene" data-zh="同景再画">Redraw the same scene</h3><p class="small" data-en="Reopen a bound lakeside lesson and draw it again with a lighter guide. Compare the two attempts side by side." data-zh="翻开已装订的湖边小镇课，点「同景再画」，用更淡的参考再画一遍。完成后，两次作品可以并排看。">Reopen a bound lakeside lesson and draw it again with a lighter guide. Compare the two attempts side by side.</p></article></div></section>
+<section class="section" id="getting-started"><h2 data-en="Your first lakeside sketch" data-zh="免费第一课 · 湖边小镇">Your first lakeside sketch</h2><div class="grid-3"><article class="card"><h3 data-en="1. Open the lesson" data-zh="1. 打开课程">1. Open the lesson</h3><p class="small" data-en="Choose “Free first lesson · Lakeside town” from an empty sketchbook or the practice gallery. You can start without a photo or a trial." data-zh="在空速写本或练习模板中选择「免费第一课 · 湖边小镇」。直接开始，无需准备照片或领取试用。">Choose “Free first lesson · Lakeside town” from an empty sketchbook or the practice gallery. You can start without a photo or a trial.</p></article><article class="card"><h3 data-en="2. Look for the shoreline" data-zh="2. 找到岸线">2. Look for the shoreline</h3><p class="small" data-en="Place the shore near the lower third of the page. Compare the height of the tower with the rooftops, then add short strokes for the reflections." data-zh="先在画面下方约三分之一处定下岸线，比较钟楼与屋顶的高低，最后用几笔短横线画出水面倒影。">Place the shore near the lower third of the page. Compare the height of the tower with the rooftops, then add short strokes for the reflections.</p></article><article class="card"><h3 data-en="3. Bind the page" data-zh="3. 装订成页">3. Bind the page</h3><p class="small" data-en="Tap Done, give the drawing a title and bind it. Open the page from your sketchbook to draw again or export it." data-zh="点「完成」，给作品起个名字并装订。在速写本中翻到这一页，就能重画或导出作品。">Tap Done, give the drawing a title and bind it. Open the page from your sketchbook to draw again or export it.</p></article></div></section>
+<section class="section" id="gallery"><h2 data-en="Inside FieldSketch" data-zh="绘画界面">Inside FieldSketch</h2><div class="gallery"><figure><img loading="lazy" width="640" height="1391" src="assets/en-reference.webp" data-en-src="assets/en-reference.webp" data-zh-src="assets/zh-reference.webp" alt="Adjust the outline of a practice scene" data-en-alt="Adjust the outline of a practice scene" data-zh-alt="调节练习场景的轮廓"><figcaption data-en="Adjust the outline of a practice scene" data-zh="调节练习场景的轮廓">Adjust the outline of a practice scene</figcaption></figure><figure><img loading="lazy" width="640" height="1391" src="assets/en-canvas.webp" data-en-src="assets/en-canvas.webp" data-zh-src="assets/zh-canvas.webp" alt="Draw with the reference beside your paper" data-en-alt="Draw with the reference beside your paper" data-zh-alt="对照参考图，在纸上落笔"><figcaption data-en="Draw with the reference beside your paper" data-zh="对照参考图，在纸上落笔">Draw with the reference beside your paper</figcaption></figure><figure><img loading="lazy" width="640" height="1391" src="assets/en-sketchbook.webp" data-en-src="assets/en-sketchbook.webp" data-zh-src="assets/zh-sketchbook.webp" alt="Open your sketchbook from the home screen" data-en-alt="Open your sketchbook from the home screen" data-zh-alt="从首页翻开速写本"><figcaption data-en="Open your sketchbook from the home screen" data-zh="从首页翻开速写本">Open your sketchbook from the home screen</figcaption></figure></div></section>
+<div class="section grid-2"><section class="card" id="privacy"><h2 data-en="Privacy policy" data-zh="隐私政策">Privacy policy</h2><p class="small" data-en="CXY Studio does not collect personal data through FieldSketch. No account is required. Drawings, layers, reference photos, saved places and practice records stay on your device. The app has no ads, third-party analytics or cross-app tracking." data-zh="CXY Studio 不通过 FieldSketch 收集个人数据。无需注册账号。速写、图层、参考照片、地点和练习记录保存在设备上。App 没有广告、第三方分析或跨应用跟踪。">CXY Studio does not collect personal data through FieldSketch. No account is required. Drawings, layers, reference photos, saved places and practice records stay on your device. The app has no ads, third-party analytics or cross-app tracking.</p><p class="small" data-en="The camera is used when you choose to take a photo. With the system photo picker, the app reads only the photos you select. Location recording is off by default. You can enable it in Settings and remove a location from an individual page. Apple handles requests for maps and place names." data-zh="选择拍照取景时才会启用相机。从系统相册选择器导入时，App 只读取你选中的照片。地点记录默认关闭，可在设置中开启，也可逐页清除。地图和地点名称请求由 Apple 系统服务处理。">The camera is used when you choose to take a photo. With the system photo picker, the app reads only the photos you select. Location recording is off by default. You can enable it in Settings and remove a location from an individual page. Apple handles requests for maps and place names.</p><p class="small" data-en="Apple handles trials, purchases and restores. FieldSketch verifies access on your device. CXY Studio does not receive payment details. Sharing or exporting sends the selected file to the destination you choose." data-zh="试用、购买和恢复由 Apple 处理。FieldSketch 在设备上验证权益，CXY Studio 不接收付款资料。分享或导出时，文件会交给你选择的接收方。">Apple handles trials, purchases and restores. FieldSketch verifies access on your device. CXY Studio does not receive payment details. Sharing or exporting sends the selected file to the destination you choose.</p><p class="small" data-en="You can delete pages or revoke permissions in system settings. Before removing the app, export any editable projects you want to keep. Deleting the app removes its local files. Copies you have already shared or exported are managed separately." data-zh="你可以删除作品，或在系统设置中撤销权限。移除 App 会删除其本地文件。请先导出要保留的可编辑工程，已分享或导出的副本由你或接收者管理。">You can delete pages or revoke permissions in system settings. Before removing the app, export any editable projects you want to keep. Deleting the app removes its local files. Copies you have already shared or exported are managed separately.</p></section><section class="card" id="support"><h2 data-en="Support" data-zh="技术支持">Support</h2><h3 data-en="What stays free?" data-zh="哪些内容始终免费？">What stays free?</h3><p class="small" data-en="The lakeside lesson stays free. For your own photos and other subjects, choose a 3-day trial or a one-time purchase. The trial does not renew or charge automatically. You can still view and export existing work after it ends." data-zh="湖边小镇课始终免费。使用自己的照片或绘画其他题材，可领取 3 天试用或一次性买断。试用不会续订或自动扣费，到期后仍可查看和导出已有作品。">The lakeside lesson stays free. For your own photos and other subjects, choose a 3-day trial or a one-time purchase. The trial does not renew or charge automatically. You can still view and export existing work after it ends.</p><h3 data-en="How do I restore a purchase?" data-zh="如何恢复购买？">How do I restore a purchase?</h3><p class="small" data-en="In FieldSketch settings, open “Trial and permanent unlock” and tap “Restore purchases”. Use the Apple Account you purchased with." data-zh="打开 FieldSketch 设置中的「试用与永久解锁」，点「恢复购买」，使用原购买时的 Apple 账户。">In FieldSketch settings, open “Trial and permanent unlock” and tap “Restore purchases”. Use the Apple Account you purchased with.</p><h3 data-en="Contact CXY Studio" data-zh="联系 CXY Studio">Contact CXY Studio</h3><p class="small" data-en="For help or privacy questions, describe your device, system version and the steps you took. GitHub reports are public. Keep personal artwork, passwords and payment details out of your report." data-zh="如需使用帮助或咨询隐私问题，请说明设备、系统版本和操作步骤。GitHub 反馈公开可见，请勿附上私人作品、密码或付款凭据。">For help or privacy questions, describe your device, system version and the steps you took. GitHub reports are public. Keep personal artwork, passwords and payment details out of your report.</p><a href="https://github.com/chenkaitech/FieldSketch/issues/new" data-en="Contact support on GitHub" data-zh="在 GitHub 提交反馈">Contact support on GitHub</a></section></div></main>
+<footer class="footer"><strong>FieldSketch</strong><p>© 2026 CXY Studio</p></footer></div>
+<script>
+function setLang(lang){
+  lang=lang==='zh'?'zh':'en';
+  document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+  document.querySelectorAll('[data-en]:not(meta)').forEach(el=>{el.textContent=el.getAttribute(lang==='zh'?'data-zh':'data-en');});
+  const meta=document.getElementById('meta-desc');
+  meta.setAttribute('content',meta.getAttribute(lang==='zh'?'data-zh':'data-en'));
+  document.querySelectorAll('img[data-en-src]').forEach(img=>{
+    img.src=img.getAttribute(lang==='zh'?'data-zh-src':'data-en-src');
+    img.alt=img.getAttribute(lang==='zh'?'data-zh-alt':'data-en-alt');
+  });
+  ['en','zh'].forEach(value=>{const button=document.getElementById('btn-'+value);button.classList.toggle('active',lang===value);button.setAttribute('aria-pressed',String(lang===value));});
+  try{localStorage.setItem('fieldsketch-lang',lang);}catch(error){}
+}
+document.getElementById('btn-en').onclick=()=>setLang('en');
+document.getElementById('btn-zh').onclick=()=>setLang('zh');
+let saved;try{saved=localStorage.getItem('fieldsketch-lang');}catch(error){}
+setLang(saved||(navigator.language?.startsWith('zh')?'zh':'en'));
+</script>
+</body></html>
